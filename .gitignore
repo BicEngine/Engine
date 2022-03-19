@@ -1,0 +1,11 @@
+# Common
+/.env
+/*.cache
+/*.php
+
+# IDE
+/.idea
+
+# Composer
+/composer.lock
+/vendor

@@ -1,0 +1,22 @@
+{
+    "name": "bic-engine/loop",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=8.1",
+        "ext-mbstring": "*",
+        "bic-engine/dispatcher": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bic\\Loop\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

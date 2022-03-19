@@ -1,0 +1,28 @@
+{
+    "name": "bic-engine/foundation",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "psr/log": "^1.0|^2.0|^3.0",
+        "bic-engine/config": "^1.0",
+        "bic-engine/error-handler-contracts": "^1.0",
+        "bic-engine/container": "^1.0",
+        "bic-engine/boot": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bic\\Foundation\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

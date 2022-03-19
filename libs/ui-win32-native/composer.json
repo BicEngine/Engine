@@ -1,0 +1,25 @@
+{
+    "name": "bic-engine/ui-win32-native",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=8.1",
+        "ext-ffi": "*",
+        "ffi/env": "^0.1|^1.0",
+        "ffi/proxy": "^0.1|^1.0",
+        "ffi/scalar-utils": "^0.2|^1.0",
+        "bic-engine/ui-win32": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bic\\Ui\\Win32\\Native\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
