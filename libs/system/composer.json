@@ -12,7 +12,8 @@
         }
     },
     "require-dev": {
-        "bic-engine/foundation": "^1.0"
+        "pestphp/pest": "^1.21",
+        "vimeo/psalm": "^4.22"
     },
     "extra": {
         "branch-alias": {

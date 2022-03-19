@@ -14,9 +14,9 @@
         <UndefinedDocblockClass errorLevel="suppress" />
     </issueHandlers>
     <projectFiles>
-        <directory name="app" />
         <directory name="libs/*/src" />
         <ignoreFiles>
+            <directory name="libs/*/tests" />
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>

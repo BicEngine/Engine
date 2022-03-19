@@ -1,0 +1,24 @@
+{
+    "name": "bic-engine/async",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bic\\Async\\": "src"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.21",
+        "vimeo/psalm": "^4.22"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

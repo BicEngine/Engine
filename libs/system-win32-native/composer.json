@@ -14,7 +14,10 @@
             "Bic\\System\\Win32\\Native\\": "src"
         }
     },
-
+    "require-dev": {
+        "pestphp/pest": "^1.21",
+        "vimeo/psalm": "^4.22"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
