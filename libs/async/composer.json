@@ -3,16 +3,25 @@
     "license": "MIT",
     "type": "library",
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "ramsey/uuid": "^4.2"
     },
     "autoload": {
         "psr-4": {
             "Bic\\Async\\": "src"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "require-dev": {
         "pestphp/pest": "^1.21",
         "vimeo/psalm": "^4.22"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bic\\Async\\Tests\\": "src"
+        }
     },
     "extra": {
         "branch-alias": {
@@ -20,5 +29,11 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "composer/package-versions-deprecated": true
+        }
+    }
 }

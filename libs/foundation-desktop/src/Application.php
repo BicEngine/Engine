@@ -11,15 +11,7 @@ declare(strict_types=1);
 
 namespace Bic\Foundation\Desktop;
 
-use Bic\Dispatcher\Exception\ListenerException;
 use Bic\Foundation\Application as BaseApplication;
-use Bic\Loop\Event\LoopStart;
-use Bic\Loop\LoopInterface;
-use Bic\Ui\Window\Event\WindowClose;
-use Bic\Ui\Window\WindowInterface;
-use Bic\Ui\Window\WindowManagerInterface;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 
 class Application extends BaseApplication
 {
