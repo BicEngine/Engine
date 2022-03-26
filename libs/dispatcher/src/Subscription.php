@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace Bic\Dispatcher;
 
+use Bic\Contracts\Dispatcher\EventInterface;
+use Bic\Contracts\Dispatcher\EventSubscriptionInterface;
+use Bic\Contracts\Dispatcher\ListenerInterface;
 use Ramsey\Uuid\Uuid;
 
 /**

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Bic\Dispatcher;
+namespace Bic\Contracts\Dispatcher;
 
 /**
  * @template T of EventInterface

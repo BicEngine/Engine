@@ -9,16 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Bic\Dispatcher;
-
-use Bic\Dispatcher\Exception\ListenerException;
+namespace Bic\Contracts\Dispatcher;
 
 /**
  * @template T of EventInterface
  * @see EventInterface
  *
- * @psalm-type SubscribableEventListener = callable(EventInterface, EventSubscriptionInterface|null): void
- * @psalm-type EventListener = callable(EventInterface): void
+ * @psalm-type SubscribableEventListener = callable(EventInterface,EventSubscriptionInterface|null):void
+ * @psalm-type EventListener = callable(EventInterface):void
  */
 interface ListenerInterface
 {
@@ -26,7 +24,7 @@ interface ListenerInterface
      * @param SubscribableEventListener|EventListener|class-string<EventInterface> $handlerOrEventClass
      * @param SubscribableEventListener|EventListener|null $handler
      * @return EventSubscriptionInterface
-     * @throws ListenerException
+     * @throws \Throwable
      */
     public function listen(callable|string $handlerOrEventClass, ?callable $handler = null): EventSubscriptionInterface;
 

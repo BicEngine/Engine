@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Dispatcher;
 
+use Bic\Contracts\Dispatcher\EventInterface;
+
 /**
  * @template T of object|null
  * @template-implements EventInterface<T>
