@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Key;
 
+use Bic\Contracts\Ui\Key\KeyInterface;
+
 enum Key: int implements KeyInterface
 {
     case BACKSPACE = 8;

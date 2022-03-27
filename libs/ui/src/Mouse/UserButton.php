@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Mouse;
 
+use Bic\Contracts\Ui\Mouse\ButtonInterface;
+
 /**
  * @internal This is an internal library class, please do not use it in your code.
  * @psalm-internal Bic\Ui\Mouse

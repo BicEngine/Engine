@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Key;
 
+use Bic\Contracts\Ui\Key\KeyInterface;
+
 final class UserKey implements KeyInterface
 {
     /**

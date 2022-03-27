@@ -11,11 +11,11 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Key\Event;
 
+use Bic\Contracts\Ui\Key\KeyInterface;
+use Bic\Contracts\Ui\Window\WindowEventInterface;
+use Bic\Contracts\Ui\Window\WindowInterface;
 use Bic\Dispatcher\Event;
-use Bic\Ui\Key\KeyInterface;
 use Bic\Ui\Key\Mode;
-use Bic\Ui\Window\WindowEventInterface;
-use Bic\Ui\Window\WindowInterface;
 
 /**
  * @property-read WindowInterface $target

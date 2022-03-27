@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Window;
 
+use Bic\Contracts\Ui\Window\WindowInterface;
+
 final class WindowCreateInfo
 {
     /**

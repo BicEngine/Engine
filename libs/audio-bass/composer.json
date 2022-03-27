@@ -4,6 +4,7 @@
     "type": "library",
     "require": {
         "php": "^8.1",
+        "ffi/proxy": "^1.0",
         "ffi-headers/bass-headers": "^1.0",
         "ffi-headers/bass-mix-headers": "^1.0",
         "bic-engine/audio-contracts": "^1.0"

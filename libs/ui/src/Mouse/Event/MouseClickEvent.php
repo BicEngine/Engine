@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Mouse\Event;
 
-use Bic\Ui\Mouse\ButtonInterface;
-use Bic\Ui\Window\WindowInterface;
+use Bic\Contracts\Ui\Mouse\ButtonInterface;
+use Bic\Contracts\Ui\Window\WindowInterface;
 
 /**
  * @internal This is an internal library class, please do not use it in your code.

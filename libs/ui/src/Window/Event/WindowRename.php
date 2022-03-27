@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Window\Event;
 
-use Bic\Ui\Window\WindowInterface;
+use Bic\Contracts\Ui\Window\WindowInterface;
 
 final class WindowRename extends WindowEvent
 {

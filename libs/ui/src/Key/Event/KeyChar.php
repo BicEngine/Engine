@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Key\Event;
 
-use Bic\Ui\Key\KeyInterface;
-use Bic\Ui\Window\WindowInterface;
+use Bic\Contracts\Ui\Key\KeyInterface;
+use Bic\Contracts\Ui\Window\WindowInterface;
 
 /**
  * @psalm-import-type GetKeyState from KeyEvent

@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Mouse\Event;
 
+use Bic\Contracts\Ui\Window\WindowInterface;
 use Bic\Ui\Mouse\Wheel\Direction;
-use Bic\Ui\Window\WindowInterface;
 
 final class MouseWheel extends MouseEvent
 {
