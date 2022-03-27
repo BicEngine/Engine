@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Bic\Audio\Bass\Stream;
 
-use Bic\Audio\Stream\FileSourceInterface;
+use Bic\Contracts\Audio\Stream\FileSourceInterface;
 
 final class FileSource implements FileSourceInterface
 {

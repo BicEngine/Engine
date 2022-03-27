@@ -13,7 +13,7 @@ namespace Bic\Ui\Win32\Native;
 
 use Bic\Dispatcher\Exception\ListenerException;
 use Bic\Dispatcher\Listener;
-use Bic\Dispatcher\ListenerInterface;
+use Bic\Contracts\Dispatcher\ListenerInterface;
 use Bic\Loop\LoopInterface;
 use Bic\Ui\Win32\Native\Internal\Kernel32;
 use Bic\Ui\Win32\Native\Internal\User32;

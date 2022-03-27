@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Bic\Audio\Bass;
 
-use Bic\Audio\DriverInterface;
 use Bic\Boot\Attribute\Info;
 use Bic\Boot\Attribute\Singleton;
+use Bic\Contracts\Audio\DriverInterface;
 use Bic\Foundation\Desktop\Path;
 
 #[Info(

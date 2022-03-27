@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio\Device;
+namespace Bic\Contracts\Audio\Device;
 
 enum Type: string implements TypeInterface
 {

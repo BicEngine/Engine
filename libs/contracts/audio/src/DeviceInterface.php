@@ -9,12 +9,20 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio\Device;
+namespace Bic\Contracts\Audio;
 
-interface TypeInterface
+/**
+ * @template TType of TypeInterface
+ */
+interface DeviceInterface
 {
     /**
      * @return non-empty-string
      */
     public function getName(): string;
+
+    /**
+     * @return list<TType>
+     */
+    public function getType(): iterable;
 }

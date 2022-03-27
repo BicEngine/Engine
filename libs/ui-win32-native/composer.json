@@ -5,9 +5,9 @@
     "require": {
         "php": "^8.1",
         "ext-ffi": "*",
-        "ffi/env": "^0.1|^1.0",
-        "ffi/proxy": "^0.1|^1.0",
-        "ffi/scalar-utils": "^0.2|^1.0",
+        "ffi/env": "^1.0",
+        "ffi/proxy": "^1.0",
+        "ffi/scalar-utils": "^1.0",
         "bic-engine/ui-win32": "^1.0"
     },
     "autoload": {

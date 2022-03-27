@@ -9,9 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio;
-
-use Bic\Collection\SetInterface;
+namespace Bic\Contracts\Audio;
 
 /**
  * @template TDevice of OutputDeviceInterface
@@ -19,15 +17,9 @@ use Bic\Collection\SetInterface;
 interface DriverInterface
 {
     /**
-     * @return bool
+     * @return list<TDevice>
      */
-    public function isAvailable(): bool;
-
-    /**
-     * @return OutputDeviceInterface[]
-     * @psalm-return SetInterface<TDevice>
-     */
-    public function getOutputDevices(): SetInterface;
+    public function getOutputDevices(): iterable;
 
     /**
      * @return TDevice

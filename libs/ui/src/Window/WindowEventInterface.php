@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Window;
 
-use Bic\Dispatcher\EventInterface;
+use Bic\Contracts\Dispatcher\EventInterface;
 
 /**
  * @property-read WindowInterface $target

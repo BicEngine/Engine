@@ -9,12 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio\Bass;
+namespace Bic\Audio\Bass\Library;
 
 use FFI\Contracts\Preprocessor\Exception\DirectiveDefinitionExceptionInterface;
 use FFI\Contracts\Preprocessor\Exception\PreprocessorExceptionInterface;
 use FFI\Headers\Bass as BassHeader;
-use FFI\Preprocessor\Preprocessor;
 use FFI\Proxy\Proxy;
 
 final class Bass extends Proxy

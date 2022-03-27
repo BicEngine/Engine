@@ -11,17 +11,19 @@ declare(strict_types=1);
 
 namespace Bic\Audio\Bass;
 
-use Bic\Audio\Stream\FileSourceInterface;
-use Bic\Audio\Stream\Frequency;
-use Bic\Audio\Stream\FrequencyInterface;
-use Bic\Audio\Stream\SourceInterface;
-use Bic\Audio\Stream\Channels;
-use Bic\Audio\Stream\ChannelsInterface;
-use Bic\Audio\StreamInterface;
+use Bic\Audio\Bass\Library\Bass;
+use Bic\Audio\Bass\Library\Mix;
 use Bic\Audio\Bass\Stream\FileSource;
 use Bic\Collection\MutableSet;
 use Bic\Collection\MutableSetInterface;
 use Bic\Collection\SetInterface;
+use Bic\Contracts\Audio\Stream\Channels;
+use Bic\Contracts\Audio\Stream\ChannelsInterface;
+use Bic\Contracts\Audio\Stream\FileSourceInterface;
+use Bic\Contracts\Audio\Stream\Frequency;
+use Bic\Contracts\Audio\Stream\FrequencyInterface;
+use Bic\Contracts\Audio\Stream\SourceInterface;
+use Bic\Contracts\Audio\StreamInterface;
 
 final class Stream implements StreamInterface
 {

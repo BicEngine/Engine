@@ -12,10 +12,10 @@ declare(strict_types=1);
 namespace Bic\Ui\Window;
 
 use Bic\Dispatcher\Dispatcher;
-use Bic\Dispatcher\DispatcherInterface;
-use Bic\Dispatcher\EventSubscriptionInterface;
+use Bic\Contracts\Dispatcher\DispatcherInterface;
+use Bic\Contracts\Dispatcher\EventSubscriptionInterface;
 use Bic\Dispatcher\Listener;
-use Bic\Dispatcher\ListenerInterface;
+use Bic\Contracts\Dispatcher\ListenerInterface;
 use Bic\Loop\LoopInterface;
 use Psr\EventDispatcher\ListenerProviderInterface;
 

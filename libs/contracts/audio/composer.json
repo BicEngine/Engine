@@ -1,14 +1,13 @@
 {
-    "name": "bic-engine/audio",
+    "name": "bic-engine/audio-contracts",
     "license": "MIT",
     "type": "library",
     "require": {
-        "php": "^8.1",
-        "bic-engine/collection": "^1.0"
+        "php": "^8.1"
     },
     "autoload": {
         "psr-4": {
-            "Bic\\Audio\\": "src"
+            "Bic\\Contracts\\Audio\\": "src"
         }
     },
     "require-dev": {

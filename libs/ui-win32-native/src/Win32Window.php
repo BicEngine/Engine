@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Win32\Native;
 
-use Bic\Dispatcher\DispatcherInterface;
-use Bic\Dispatcher\EventSubscriptionInterface;
+use Bic\Contracts\Dispatcher\DispatcherInterface;
+use Bic\Contracts\Dispatcher\EventSubscriptionInterface;
 use Bic\Dispatcher\Exception\ListenerException;
 use Bic\Loop\Event\LoopTick;
 use Bic\Loop\LoopInterface;

@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Bic\Foundation;
 
-use Bic\Dispatcher\DispatcherInterface;
+use Bic\Contracts\Dispatcher\DispatcherInterface;
 use Bic\Foundation\Event\Loading;
 use Bic\Foundation\Event\Running;
 use Composer\InstalledVersions;

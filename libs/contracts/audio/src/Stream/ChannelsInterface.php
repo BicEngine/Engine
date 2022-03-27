@@ -9,12 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio\Stream;
+namespace Bic\Contracts\Audio\Stream;
 
-interface SourceInterface
+interface ChannelsInterface extends \Countable
 {
     /**
-     * @return int
+     * Returns count of the audio channels
+     *
+     * @return positive-int
      */
-    public function getId(): int;
+    public function count(): int;
 }

@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Bic\Ui\Window;
 
-use Bic\Dispatcher\ListenerInterface;
+use Bic\Contracts\Dispatcher\ListenerInterface;
 use Bic\Ui\Window\Event\WindowEvent;
 
 /**

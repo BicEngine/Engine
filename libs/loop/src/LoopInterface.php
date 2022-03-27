@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Bic\Loop;
 
-use Bic\Dispatcher\ListenerInterface;
+use Bic\Contracts\Dispatcher\ListenerInterface;
 use Bic\Loop\Event\LoopEventInterface;
 
 /**

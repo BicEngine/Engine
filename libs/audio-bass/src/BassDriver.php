@@ -11,13 +11,16 @@ declare(strict_types=1);
 
 namespace Bic\Audio\Bass;
 
-use Bic\Audio\Device\Type;
-use Bic\Audio\Device\TypeInterface;
-use Bic\Audio\DriverInterface;
+use Bic\Audio\Bass\Library\Bass;
+use Bic\Audio\Bass\Library\Mix;
 use Bic\Collection\Set;
 use Bic\Collection\SetInterface;
+use Bic\Contracts\Audio\Device\Type;
+use Bic\Contracts\Audio\Device\TypeInterface;
+use Bic\Contracts\Audio\DriverInterface;
 use FFI\CData;
-use FFI\Env\Runtime;
+use FFI\Contracts\Preprocessor\Exception\DirectiveDefinitionExceptionInterface;
+use FFI\Contracts\Preprocessor\Exception\PreprocessorExceptionInterface;
 
 /**
  * @template-implements DriverInterface<OutputDevice>
@@ -28,16 +31,16 @@ final class BassDriver implements DriverInterface
      * @var non-empty-array<int, TypeInterface>
      */
     private const TYPE_MAPPING = [
-        Bass::DEVICE_TYPE_NETWORK => Type::NETWORK,
-        Bass::DEVICE_TYPE_SPEAKERS => Type::SPEAKERS,
-        Bass::DEVICE_TYPE_LINE => Type::LINE,
-        Bass::DEVICE_TYPE_HEADPHONES => Type::HEADPHONES,
-        Bass::DEVICE_TYPE_MICROPHONE => Type::MICROPHONE,
-        Bass::DEVICE_TYPE_HEADSET => Type::HEADSET,
-        Bass::DEVICE_TYPE_HANDSET => Type::HANDSET,
-        Bass::DEVICE_TYPE_DIGITAL => Type::DIGITAL,
-        Bass::DEVICE_TYPE_SPDIF => Type::SPDIF,
-        Bass::DEVICE_TYPE_HDMI => Type::HDMI,
+        Bass::DEVICE_TYPE_NETWORK     => Type::NETWORK,
+        Bass::DEVICE_TYPE_SPEAKERS    => Type::SPEAKERS,
+        Bass::DEVICE_TYPE_LINE        => Type::LINE,
+        Bass::DEVICE_TYPE_HEADPHONES  => Type::HEADPHONES,
+        Bass::DEVICE_TYPE_MICROPHONE  => Type::MICROPHONE,
+        Bass::DEVICE_TYPE_HEADSET     => Type::HEADSET,
+        Bass::DEVICE_TYPE_HANDSET     => Type::HANDSET,
+        Bass::DEVICE_TYPE_DIGITAL     => Type::DIGITAL,
+        Bass::DEVICE_TYPE_SPDIF       => Type::SPDIF,
+        Bass::DEVICE_TYPE_HDMI        => Type::HDMI,
         Bass::DEVICE_TYPE_DISPLAYPORT => Type::DISPLAYPORT,
     ];
 
@@ -74,27 +77,23 @@ final class BassDriver implements DriverInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @return OutputDevice
+     * @throws \Exception
      */
-    public function isAvailable(): bool
+    public function getDefaultOutputDevice(): OutputDevice
     {
-        return \PHP_OS_FAMILY === 'Windows' && Runtime::isAvailable();
-    }
+        if ($this->default !== null) {
+            return $this->default;
+        }
 
-    /**
-     * @return Bass
-     */
-    private function bass(): Bass
-    {
-        return $this->bass ??= new Bass($this->bassBinary);
-    }
+        // Boot all output devices
+        $first = null;
+        foreach ($this->getOutputDevices() as $device) {
+            $first ??= $device;
+        }
 
-    /**
-     * @return Mix
-     */
-    private function mix(): Mix
-    {
-        return $this->mix ??= new Mix($this->bassMixBinary);
+        /** @psalm-suppress TypeDoesNotContainType */
+        return $this->default ?? $first ?? throw new \Exception('Could not to get default output device');
     }
 
     /**
@@ -130,24 +129,19 @@ final class BassDriver implements DriverInterface
     }
 
     /**
-     * @param int $flags
-     * @return SetInterface<TypeInterface>
+     * @return Bass
+     * @throws DirectiveDefinitionExceptionInterface
+     * @throws PreprocessorExceptionInterface
      */
-    private function detectDeviceType(int $flags): SetInterface
+    private function bass(): Bass
     {
-        return Set::fromIterable(static function () use ($flags): iterable {
-            foreach (self::TYPE_MAPPING as $flag => $case) {
-                if (($flags & $flag) === $flag) {
-                    yield $case;
-                }
-            }
-        });
+        return $this->bass ??= new Bass($this->bassBinary);
     }
 
     /**
      * @param Bass $bass
      * @psalm-return iterable<int, CData>
-     * @return iterable<int, CData|\Bic\FFI\Bass\BASS_DEVICEINFO>
+     * @return iterable<int, CData>
      * @psalm-suppress UndefinedPropertyFetch
      * @psalm-suppress PossiblyNullArgument
      */
@@ -169,22 +163,27 @@ final class BassDriver implements DriverInterface
     }
 
     /**
-     * @return OutputDevice
-     * @throws \Exception
+     * @return Mix
+     * @throws DirectiveDefinitionExceptionInterface
+     * @throws PreprocessorExceptionInterface
      */
-    public function getDefaultOutputDevice(): OutputDevice
+    private function mix(): Mix
     {
-        if ($this->default !== null) {
-            return $this->default;
-        }
+        return $this->mix ??= new Mix($this->bassMixBinary);
+    }
 
-        // Boot all output devices
-        $first = null;
-        foreach ($this->getOutputDevices() as $device) {
-            $first ??= $device;
-        }
-
-        /** @psalm-suppress TypeDoesNotContainType */
-        return $this->default ?? $first ?? throw new \Exception('Could not to get default output device');
+    /**
+     * @param int $flags
+     * @return SetInterface<TypeInterface>
+     */
+    private function detectDeviceType(int $flags): SetInterface
+    {
+        return Set::fromIterable(static function () use ($flags): iterable {
+            foreach (self::TYPE_MAPPING as $flag => $case) {
+                if (($flags & $flag) === $flag) {
+                    yield $case;
+                }
+            }
+        });
     }
 }

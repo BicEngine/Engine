@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio\Stream;
+namespace Bic\Contracts\Audio\Stream;
 
 enum Channels: int implements ChannelsInterface
 {

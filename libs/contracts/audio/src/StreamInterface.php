@@ -9,13 +9,12 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio;
+namespace Bic\Contracts\Audio;
 
-use Bic\Audio\Stream\FileSourceInterface;
-use Bic\Audio\Stream\FrequencyInterface;
-use Bic\Audio\Stream\SourceInterface;
-use Bic\Audio\Stream\ChannelsInterface;
-use Bic\Collection\SetInterface;
+use Bic\Contracts\Audio\Stream\ChannelsInterface;
+use Bic\Contracts\Audio\Stream\FileSourceInterface;
+use Bic\Contracts\Audio\Stream\FrequencyInterface;
+use Bic\Contracts\Audio\Stream\SourceInterface;
 
 interface StreamInterface
 {
@@ -25,9 +24,9 @@ interface StreamInterface
     public function getFrequency(): FrequencyInterface;
 
     /**
-     * @return SetInterface<SourceInterface>
+     * @return list<SourceInterface>
      */
-    public function getSources(): SetInterface;
+    public function getSources(): iterable;
 
     /**
      * @psalm-taint-sink file $pathname

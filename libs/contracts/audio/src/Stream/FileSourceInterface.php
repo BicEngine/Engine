@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio\Stream;
+namespace Bic\Contracts\Audio\Stream;
 
-interface FrequencyInterface
+interface FileSourceInterface extends SourceInterface
 {
     /**
-     * @return positive-int
+     * @return string
      */
-    public function getValue(): int;
+    public function getPathname(): string;
 }

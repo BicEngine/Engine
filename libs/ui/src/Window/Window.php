@@ -12,8 +12,8 @@ declare(strict_types=1);
 namespace Bic\Ui\Window;
 
 use Bic\Dispatcher\Dispatcher;
-use Bic\Dispatcher\DispatcherInterface;
-use Bic\Dispatcher\EventSubscriptionInterface;
+use Bic\Contracts\Dispatcher\DispatcherInterface;
+use Bic\Contracts\Dispatcher\EventSubscriptionInterface;
 use Bic\Dispatcher\Listener;
 use Ramsey\Uuid\Uuid;
 

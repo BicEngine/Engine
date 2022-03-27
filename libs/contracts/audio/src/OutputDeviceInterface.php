@@ -9,20 +9,19 @@
 
 declare(strict_types=1);
 
-namespace Bic\Audio;
+namespace Bic\Contracts\Audio;
 
-use Bic\Audio\Stream\Frequency;
-use Bic\Audio\Stream\FrequencyInterface;
-use Bic\Audio\Stream\Channels;
-use Bic\Audio\Stream\ChannelsInterface;
-use Bic\Collection\SetInterface;
+use Bic\Contracts\Audio\Stream\Channels;
+use Bic\Contracts\Audio\Stream\ChannelsInterface;
+use Bic\Contracts\Audio\Stream\Frequency;
+use Bic\Contracts\Audio\Stream\FrequencyInterface;
 
 interface OutputDeviceInterface extends DeviceInterface
 {
     /**
-     * @return SetInterface<StreamInterface>
+     * @return list<StreamInterface>
      */
-    public function getStreams(): SetInterface;
+    public function getStreams(): iterable;
 
     /**
      * @param FrequencyInterface $frequency

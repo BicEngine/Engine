@@ -11,15 +11,17 @@ declare(strict_types=1);
 
 namespace Bic\Audio\Bass;
 
-use Bic\Audio\Device\TypeInterface;
-use Bic\Audio\OutputDeviceInterface;
-use Bic\Audio\Stream\Frequency;
-use Bic\Audio\Stream\FrequencyInterface;
-use Bic\Audio\Stream\Channels;
-use Bic\Audio\Stream\ChannelsInterface;
-use Bic\Audio\StreamInterface;
+use Bic\Audio\Bass\Library\Bass;
+use Bic\Audio\Bass\Library\Mix;
 use Bic\Collection\MutableSet;
 use Bic\Collection\SetInterface;
+use Bic\Contracts\Audio\Device\TypeInterface;
+use Bic\Contracts\Audio\OutputDeviceInterface;
+use Bic\Contracts\Audio\Stream\Channels;
+use Bic\Contracts\Audio\Stream\ChannelsInterface;
+use Bic\Contracts\Audio\Stream\Frequency;
+use Bic\Contracts\Audio\Stream\FrequencyInterface;
+use Bic\Contracts\Audio\StreamInterface;
 
 final class OutputDevice implements OutputDeviceInterface
 {
