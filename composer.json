@@ -44,11 +44,6 @@
             "Bic\\Foundation\\Console\\": "libs/foundation-console/src",
             "Bic\\Foundation\\Desktop\\": "libs/foundation-desktop/src",
             "Bic\\Loop\\": "libs/loop/src",
-            "Bic\\System\\": "libs/system/src",
-            "Bic\\System\\Linux\\": "libs/system-linux/src",
-            "Bic\\System\\Linux\\Native\\": "libs/system-linux-native/src",
-            "Bic\\System\\Win32\\": "libs/system-win32/src",
-            "Bic\\System\\Win32\\Native\\": "libs/system-win32-native/src",
             "Bic\\Ui\\": "libs/ui/src",
             "Bic\\Ui\\Win32\\": "libs/ui-win32/src",
             "Bic\\Ui\\Win32\\Native\\": "libs/ui-win32-native/src"
@@ -84,11 +79,6 @@
         "bic-engine/foundation-desktop": "self.version",
         "bic-engine/loop": "self.version",
         "bic-engine/memoizable-contracts": "self.version",
-        "bic-engine/system": "self.version",
-        "bic-engine/system-linux": "self.version",
-        "bic-engine/system-linux-native": "self.version",
-        "bic-engine/system-win32": "self.version",
-        "bic-engine/system-win32-native": "self.version",
         "bic-engine/ui": "self.version",
         "bic-engine/ui-win32": "self.version",
         "bic-engine/ui-win32-native": "self.version"
